@@ -11,6 +11,8 @@ body {
   margin: 0 auto;
   width: 50%;
   display: flex;
+  flex-flow: column;
+  align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  background: darkgray;
 }
