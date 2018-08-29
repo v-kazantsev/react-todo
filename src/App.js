@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Header, Button } from 'elements';
-import Portal from './Portal';
 import Toggle from './Toggle';
 import Modal from './Modal';
+import TaskDashboard from 'containers/TaskDashboard';
 
 class App extends Component {
   render() {
@@ -11,6 +11,7 @@ class App extends Component {
         <Header>
           ToDo List
         </Header>
+        <TaskDashboard />
         <Toggle>
           {({on, toggle}) => (
             <React.Fragment>
