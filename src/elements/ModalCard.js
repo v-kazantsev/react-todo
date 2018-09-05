@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export default styled.div`
   position: relative;
@@ -10,9 +10,9 @@ export default styled.div`
   width: 30em;
   min-width: 20em;
   margin-bottom: 10vh;
-  button {
+  .close-button {
     position: absolute;
     top: 0;
     right: 0;
   }
-`;
+`

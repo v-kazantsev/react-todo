@@ -8,9 +8,9 @@ class Modal extends React.Component {
     return(
       <Portal>
         {on && (
-        <Wrapper onClick={toggle}>
+        <Wrapper>
           <ModalCard>
-            <button onClick={toggle}>Close</button>
+            <button className='close-button' onClick={toggle}>Close</button>
             <div>{children}</div>
           </ModalCard>
         </Wrapper>

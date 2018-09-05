@@ -7,6 +7,10 @@ body {
   font-family: Helvetica, sans-serif;
   width: 100vw;
 }
+
+body ul {
+  list-style: none;
+}
 .container {
   margin: 0 auto;
   width: 50%;

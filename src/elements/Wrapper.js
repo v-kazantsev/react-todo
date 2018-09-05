@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export default styled.div`
   position: absolute;
@@ -11,4 +11,4 @@ export default styled.div`
   justify-content: center;
   align-items: center;
   opacity: 0.9;
-`;
+`

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export default styled.h1`
   color: violet;
@@ -11,4 +11,4 @@ export default styled.h1`
     height: 1em;
     background: pink;
   }
-`;
+`
