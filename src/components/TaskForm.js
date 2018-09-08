@@ -5,11 +5,19 @@ import cuid from 'cuid'
 import moment from 'moment'
 import { createTask } from 'actions/taskActions'
 import TextInput from './TextInput'
+<<<<<<< HEAD
 import DateInput from './DateInput'
 
 // const mapState = state => {
 // 	task: state.task
 // }
+=======
+import Button from 'elements/Button'
+
+const mapState = state => {
+	// state.task
+}
+>>>>>>> master
 
 const actions ={ createTask }
 
@@ -26,11 +34,11 @@ let TaskForm = ({handleSubmit, createTask}) => {
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div>
 				<label htmlFor='title'>Title:</label>
-				<Field name='title' component={TextInput} placeholder='Name your task' type='text' />
+				<Field name='title' component={TextInput} type='text' />
 			</div>
 			<div>
 				<label htmlFor='description'>Description:</label>
-				<Field name='description' component='input' type='text' />
+				<Field name='description' component={TextInput} type='text' />
 			</div>
 			<div>
 				<label htmlFor='deadline'>Due to:</label>
@@ -54,7 +62,7 @@ let TaskForm = ({handleSubmit, createTask}) => {
 					</label>
 				</span>
 			</div>
-			<button type='submit'>Add task</button>
+			<Button float type='submit'>Add task</Button>
 		</form>)
 }
 

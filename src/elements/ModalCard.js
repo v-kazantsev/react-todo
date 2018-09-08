@@ -14,5 +14,8 @@ export default styled.div`
     position: absolute;
     top: 0;
     right: 0;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
   }
 `
