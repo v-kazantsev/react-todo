@@ -1,8 +1,12 @@
 import React from 'react'
+import Label from 'elements/Label'
 
 const TextInput = ({input, width, type, placeholder, meta: {touched, error}}) => {
 	return(
-		<input {...input} placeholder={placeholder} type={type} />
+		<div>
+			<input {...input} placeholder={placeholder} type={type} />
+			<Label>Cannot be blank</Label>
+		</div>
 	)
 }
 

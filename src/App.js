@@ -16,7 +16,7 @@ class App extends Component {
 				<Toggle>
 					{({on, toggle}) => (
 						<React.Fragment>
-							<Button rounded large onClick={toggle}>+</Button>
+							<Button rounded large color={'pink'} onClick={toggle}>+</Button>
 							<Modal on={on} toggle={toggle}>
 								<TaskForm />
 							</Modal>
