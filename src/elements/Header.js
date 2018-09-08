@@ -10,5 +10,6 @@ export default styled.h1`
     display: block;
     height: 1em;
     background: pink;
+    background-image: linear-gradient(90deg, violet, pink)
   }
 `

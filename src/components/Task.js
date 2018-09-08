@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import { updateTask, removeTask } from 'actions/taskActions'
+import Toggle from '../Toggle'
+import TaskForm from 'components/TaskForm'
+import Modal from '../Modal'
+import { Button } from 'elements'
 
 const actions = {
 	updateTask,
@@ -9,7 +13,7 @@ const actions = {
 
 const Task = ({ title, description, importance, deadline, id, updateTask, removeTask }) => {
 	return (
-		<React.Fragment>
+		<Fragment>
 			<div>
         Title: {title}
 			</div>
@@ -22,9 +26,18 @@ const Task = ({ title, description, importance, deadline, id, updateTask, remove
 			<div>
         Due to: {deadline}
 			</div>
-			<button onClick={() => updateTask(id)}>Edit</button>
-			<button onClick={() => removeTask(id)}>Remove</button>
-		</React.Fragment>
+			<Toggle>
+				{({on, toggle}) => (
+					<Fragment>
+						<Button onClick={toggle}>Edit</Button>
+						<Modal on={on} toggle={toggle}>
+							<TaskForm />
+						</Modal>
+					</Fragment>
+				)}
+			</Toggle>
+			<Button onClick={() => removeTask(id)}>Remove</Button>
+		</Fragment>
 	)
 }
 

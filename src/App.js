@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import { Header, Button } from 'elements'
-import Toggle from './Toggle'
-import Modal from './Modal'
+import { Header } from 'elements'
 import TaskDashboard from 'containers/TaskDashboard'
-import TaskForm from 'components/TaskForm'
 
 class App extends Component {
 	render() {
@@ -13,16 +10,6 @@ class App extends Component {
           ToDo List
 				</Header>
 				<TaskDashboard />
-				<Toggle>
-					{({on, toggle}) => (
-						<React.Fragment>
-							<Button rounded large color={'pink'} onClick={toggle}>+</Button>
-							<Modal on={on} toggle={toggle}>
-								<TaskForm />
-							</Modal>
-						</React.Fragment>
-					)}
-				</Toggle>
 			</div>
 		)
 	}

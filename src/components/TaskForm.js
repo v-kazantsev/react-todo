@@ -5,19 +5,9 @@ import cuid from 'cuid'
 import moment from 'moment'
 import { createTask } from 'actions/taskActions'
 import TextInput from './TextInput'
-<<<<<<< HEAD
 import DateInput from './DateInput'
-
-// const mapState = state => {
-// 	task: state.task
-// }
-=======
 import Button from 'elements/Button'
 
-const mapState = state => {
-	// state.task
-}
->>>>>>> master
 
 const actions ={ createTask }
 

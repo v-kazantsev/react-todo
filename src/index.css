@@ -8,13 +8,19 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   width: 100vw;
 }
 
 body ul {
   list-style: none;
 }
+
+body li:nth-child(odd) {
+  background-color:#FFF0F5;
+}
+
+
 .container {
   margin: 0 auto;
   width: 50%;
@@ -22,5 +28,4 @@ body ul {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  background: darkgray;
 }

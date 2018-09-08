@@ -6,7 +6,6 @@ export default styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: darkgrey;
   display: flex;
   justify-content: center;
   align-items: center;
