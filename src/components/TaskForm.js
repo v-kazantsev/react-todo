@@ -2,12 +2,14 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 import cuid from 'cuid'
+import moment from 'moment'
 import { createTask } from 'actions/taskActions'
 import TextInput from './TextInput'
+import DateInput from './DateInput'
 
-const mapState = state => {
-	state.task
-}
+// const mapState = state => {
+// 	task: state.task
+// }
 
 const actions ={ createTask }
 
@@ -15,6 +17,7 @@ const actions ={ createTask }
 
 let TaskForm = ({handleSubmit, createTask}) => {
 	const onSubmit = (values) => {
+		values.deadline = moment.utc(values.deadline, 'DD/MM/YYYY').format('DD/MM/YYYY')
 		const id = cuid()
 		values['id'] = id
 		createTask(values)
@@ -31,7 +34,7 @@ let TaskForm = ({handleSubmit, createTask}) => {
 			</div>
 			<div>
 				<label htmlFor='deadline'>Due to:</label>
-				<Field name='deadline' component='input' type='date' />
+				<Field name='deadline' component={DateInput} type='date' />
 			</div>
 			<div>
 				<label>Importance: </label>
@@ -60,5 +63,5 @@ TaskForm = reduxForm({
 	enableReinitialize: true,
 })(TaskForm)
 
-export default connect(mapState, actions)(TaskForm)
+export default connect(null, actions)(TaskForm)
 

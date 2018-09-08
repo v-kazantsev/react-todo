@@ -9,6 +9,7 @@ const mapState = state => ({
 class TaskDashboard extends React.Component {
 	render() {
 		const {tasks} = this.props
+		console.log(tasks)
 		return (
 			<ul>
 				{tasks.map(task => <li key={task.id}>
@@ -16,7 +17,7 @@ class TaskDashboard extends React.Component {
 						title={task.title}
 						description={task.description}
 						importance={task.importance}
-						deadline={task.date}
+						deadline={task.deadline}
 						id={task.id}
 					/>
 				</li>)}
