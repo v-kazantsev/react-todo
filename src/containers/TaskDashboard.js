@@ -16,7 +16,7 @@ class TaskDashboard extends Component {
 		return (
 			<Fragment>
 				<ul>
-					{tasks.map(task => <li key={task.id} style={{marginBottom: '0.5em', padding: '0.5em', paddingBottom: 0}}>
+					{tasks.map(task => <li key={task.id}>
 						<Task
 							title={task.title}
 							description={task.description}

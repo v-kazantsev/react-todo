@@ -1,10 +1,10 @@
 import React from 'react'
-import Label from 'elements/Label'
+import { Label, Input }  from 'elements'
 
 const TextInput = ({input, width, type, placeholder, meta: {touched, error}}) => {
 	return(
 		<div>
-			<input {...input} placeholder={placeholder} type={type} />
+			<Input {...input} placeholder={placeholder} type={type} />
 			<Label>Cannot be blank</Label>
 		</div>
 	)

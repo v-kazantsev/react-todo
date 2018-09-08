@@ -5,7 +5,7 @@ export default styled.div`
   background: white;
   border-radius: 5px;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-  padding: 1em;
+  padding: 2em;
   z-index: 10;
   width: 30em;
   min-width: 20em;
@@ -16,6 +16,9 @@ export default styled.div`
     right: 0;
     outline: none;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
+    :hover {
+      cursor: pointer;
+    }
   }
 `

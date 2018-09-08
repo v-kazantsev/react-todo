@@ -11,7 +11,7 @@ const DateInput = ({input: { value, onChange, restInput }, placeholder, meta: { 
 			selected={value ? moment(value) : null}
 			onChange={onChange}
 			{...restInput}
-			placeholder={'Select date'}
+			placeholder={placeholder}
 		/>
 	)
 }

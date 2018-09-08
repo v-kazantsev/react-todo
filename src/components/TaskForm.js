@@ -6,12 +6,9 @@ import moment from 'moment'
 import { createTask } from 'actions/taskActions'
 import TextInput from './TextInput'
 import DateInput from './DateInput'
-import Button from 'elements/Button'
-
+import { Button } from 'elements'
 
 const actions ={ createTask }
-
-
 
 let TaskForm = ({handleSubmit, createTask}) => {
 	const onSubmit = (values) => {
@@ -23,16 +20,13 @@ let TaskForm = ({handleSubmit, createTask}) => {
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div>
-				<label htmlFor='title'>Title:</label>
-				<Field name='title' component={TextInput} type='text' />
+				<Field name='title' component={TextInput} type='text' placeholder={'Title:'} />
 			</div>
 			<div>
-				<label htmlFor='description'>Description:</label>
-				<Field name='description' component={TextInput} type='text' />
+				<Field name='description' component={TextInput} type='text' placeholder={'Description:'} />
 			</div>
 			<div>
-				<label htmlFor='deadline'>Due to:</label>
-				<Field name='deadline' component={DateInput} type='date' />
+				<Field name='deadline' component={DateInput} type='text' placeholder={'Due to:'} />
 			</div>
 			<div>
 				<label>Importance: </label>

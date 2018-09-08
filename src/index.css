@@ -14,12 +14,8 @@ body {
 
 body ul {
   list-style: none;
+  padding-inline-start: 0;
 }
-
-body li:nth-child(odd) {
-  background-color:#FFF0F5;
-}
-
 
 .container {
   margin: 0 auto;
@@ -29,3 +25,14 @@ body li:nth-child(odd) {
   align-items: center;
   justify-content: center;
 }
+
+.container li {
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  padding-bottom: 0;
+}
+
+.container li:nth-child(odd) {
+  background-color:#FFF0F5;
+}
+
