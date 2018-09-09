@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import lscache from 'lscache'
 import Task from 'components/Task'
 import TaskForm from 'components/TaskForm'
-import Toggle from '../Toggle'
+import Toggle from 'utils/Toggle'
 import Modal from '../Modal'
 import { Button } from 'elements'
 

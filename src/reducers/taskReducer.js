@@ -8,21 +8,24 @@ const testData = [
 		title: 'Try new dark beer',
 		description: 'Some not very long description here.',
 		date: '29-08-2018',
-		importance: 'ordinary'
+		importance: 'ordinary',
+		completed: false,
 	},
 	{
 		id: '2',
 		title: 'Watch new movie',
 		description: 'Some not very long description here.',
 		date: '29-08-2018',
-		importance: 'important'
+		importance: 'important',
+		completed: false,
 	},
 	{
 		id: '3',
 		title: 'Apply for a new job',
 		description: 'Some not very long description here.',
 		date: '29-08-2018',
-		importance: 'very important'
+		importance: 'very important',
+		completed: false,
 	},
 ]
 
