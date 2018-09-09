@@ -16,9 +16,7 @@ const Task = ({ title, description, importance, deadline, id, removeTask }) => {
 		let today = new Date()
 		today = moment.utc(today.getDate(), 'DD-MM-YYYY').format()
 		if (today > deadline) return true
-	}
-	const failed = checkDeadline()
-	
+	}	
 	return (
 		<Fragment>
 			<div>
@@ -31,14 +29,14 @@ const Task = ({ title, description, importance, deadline, id, removeTask }) => {
         Importance: {importance}
 			</div>
 			<div>
-        Due to: <span style={{color: failed && 'red'}}>{moment(deadline).format('DD-MM-YYYY')}</span>
+        Due to: <span style={{color: checkDeadline() && 'red'}}>{moment(deadline).format('DD-MM-YYYY')}</span>
 			</div>
 			<Toggle>
 				{({on, toggle}) => (
 					<Fragment>
 						<Button onClick={toggle}>Edit</Button>
 						<Modal on={on} toggle={toggle}>
-							<TaskForm taskId={id}/>
+							<TaskForm taskId={id} action={'edit'}/>
 						</Modal>
 					</Fragment>
 				)}

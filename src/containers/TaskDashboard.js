@@ -29,8 +29,8 @@ class TaskDashboard extends Component {
         <div>
           All<input type='radio' value='all' onChange={this.handleChange} checked={this.state.option === 'all'} />
           Ordinary<input type='radio' value='ordinary' onChange={this.handleChange} checked={this.state.option === 'ordinary'} />
-          Important<input type='radio' value='important' onChange={this.handleChange} checked={this.state.option === 'high'} />
-          Very important<input type='radio' value='very high' onChange={this.handleChange} checked={this.state.option === 'very high'} />
+          Important<input type='radio' value='important' onChange={this.handleChange} checked={this.state.option === 'important'} />
+          Very important<input type='radio' value='very important' onChange={this.handleChange} checked={this.state.option === 'very important'} />
         </div>
 				<ul>
             {tasks.map(task => <li key={task.id}>

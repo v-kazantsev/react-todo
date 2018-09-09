@@ -1,4 +1,4 @@
-import { TASK_CREATED, TASK_UPDATED, TASK_REMOVED, LOAD } from 'constants/taskConstants'
+import { TASK_CREATED, TASK_UPDATED, TASK_REMOVED } from 'constants/taskConstants'
 
 export const createTask = task => {
 	return {
@@ -7,10 +7,10 @@ export const createTask = task => {
 	}
 }
 
-export const updateTask = task => {
+export const updateTask = (task, taskId) => {
 	return {
 		type: TASK_UPDATED,
-		payload: {task}
+		payload: {task, taskId}
 	}
 }
 
@@ -18,11 +18,5 @@ export const removeTask = taskId => {
 	return {
 		type: TASK_REMOVED,
 		payload: {taskId}
-	}
-}
-
-export const loadTask = () => {
-	return {
-		type: LOAD,
 	}
 }

@@ -5,7 +5,7 @@ const TextInput = ({input, width, type, placeholder, meta: {touched, error}}) =>
 	return(
 		<div>
 			<Input {...input} placeholder={placeholder} type={type} />
-			<Label>Cannot be blank</Label>
+			{touched && error && <Label>{error}</Label>}
 		</div>
 	)
 }

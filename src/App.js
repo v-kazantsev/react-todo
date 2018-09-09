@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Header } from 'elements'
-import TaskDashboard from 'containers/TaskDashboard'
+import TaskDashboard  from 'containers/TaskDashboard'
 
 class App extends Component {
 	render() {
