@@ -50,6 +50,7 @@ class TaskForm extends Component {
 				values.deadline = moment.utc(values.deadline, 'DD-MM-YYYY').format()
 				const id = cuid()
 				values['id'] = id
+				values['completed'] = false
 				createTask(values)
 			}
 		}
@@ -62,7 +63,7 @@ class TaskForm extends Component {
 					<Field name='description' component={TextInput} type='text' placeholder={'Description:'} />
 				</div>
 				<div>
-					<Field name='deadline' component={DateInput} type='text' placeholder={'Due to:'} />
+					<Field name='deadline' component={DateInput} type='text' />
 				</div>
 				<div>
 					<label>Importance: </label>

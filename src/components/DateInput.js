@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
 
-const DateInput = ({input: { value, onChange, restInput }, placeholder, meta: { touched, error }, ...rest}) => {
+const DateInput = ({input: { value, onChange, restInput }, meta: { touched, error }, ...rest}) => {
 	return (
 		<DatePicker
 			{...rest}
@@ -11,7 +11,6 @@ const DateInput = ({input: { value, onChange, restInput }, placeholder, meta: { 
 			selected={value ? moment(value) : null}
 			onChange={onChange}
 			{...restInput}
-			placeholder={placeholder}
 		/>
 	)
 }

@@ -1,17 +1,27 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { removeTask } from 'actions/taskActions'
+import { removeTask, toggleTask } from 'actions/taskActions'
 import Toggle from '../Toggle'
 import TaskForm from 'components/TaskForm'
 import Modal from '../Modal'
 import { Button } from 'elements'
 
-const actions = {
-	removeTask,
+const mapState = state => {
+	return {
+		tasks: state.tasks
+	}
 }
 
-const Task = ({ title, description, importance, deadline, id, removeTask }) => {
+const actions = {
+	removeTask,
+	toggleTask,
+}
+
+const Task = ({ title, description, importance, deadline, id, removeTask, toggleTask, tasks }) => {
+
+	const completed = tasks && tasks.filter(task => task.id === id)[0].completed
+
 	const checkDeadline = () => {
 		let today = new Date()
 		today = moment.utc(today.getDate(), 'DD-MM-YYYY').format()
@@ -31,6 +41,8 @@ const Task = ({ title, description, importance, deadline, id, removeTask }) => {
 			<div>
         Due to: <span style={{color: checkDeadline() && 'red'}}>{moment(deadline).format('DD-MM-YYYY')}</span>
 			</div>
+			<div>
+			</div>
 			<Toggle>
 				{({on, toggle}) => (
 					<Fragment>
@@ -42,8 +54,10 @@ const Task = ({ title, description, importance, deadline, id, removeTask }) => {
 				)}
 			</Toggle>
 			<Button onClick={() => removeTask(id)}>Remove</Button>
+			<Button onClick={() => toggleTask(id)}>Toggle</Button>
+			{completed && <span style={{color: 'violet'}}>Task completed</span>}
 		</Fragment>
 	)
 }
 
-export default connect(null, actions)(Task)
+export default connect(mapState, actions)(Task)
