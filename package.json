@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "cuid": "^2.1.4",
+    "lscache": "^1.2.0",
     "moment": "^2.22.2",
     "react": "^16.4.2",
     "react-datepicker": "^1.6.0",

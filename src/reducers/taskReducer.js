@@ -1,7 +1,8 @@
+import lscache from 'lscache'
 import { TASK_CREATED, TASK_UPDATED, TASK_REMOVED } from 'constants/taskConstants'
 import createReducer from 'utils/createReducer'
 
-const initialState = [
+const testData = [
 	{
 		id: '1',
 		title: 'Try new dark beer',
@@ -24,6 +25,9 @@ const initialState = [
 		importance: 'very high'
 	},
 ]
+
+const initialState = lscache.get('storedTasks') || testData
+console.log(lscache.get('storedTasks'))
 
 export const createTask = (state, payload) => [...state, payload.task]
 
