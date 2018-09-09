@@ -1,4 +1,4 @@
-import { TASK_CREATED, TASK_UPDATED, TASK_REMOVED } from 'constants/taskConstants'
+import { TASK_CREATED, TASK_UPDATED, TASK_REMOVED, LOAD } from 'constants/taskConstants'
 import createReducer from 'utils/createReducer'
 
 const initialState = [
@@ -34,8 +34,13 @@ export const createTask = (state, payload) => [...state, payload.task]
 
 export const removeTask = (state, payload) => [...state.filter(task => task.id !== payload.taskId)]
 
+export const loadTask = (state) => [
+	...state
+]
+
 export default createReducer(initialState, {
 	[TASK_CREATED]: createTask,
 	// [TASK_UPDATED]: updateTask,
-	[TASK_REMOVED]: removeTask
+	[TASK_REMOVED]: removeTask,
+	[LOAD]: loadTask,
 })

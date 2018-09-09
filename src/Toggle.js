@@ -1,9 +1,11 @@
-import React from 'react';
+import { Component }  from 'react';
 
-class Toggle extends React.Component {
+class Toggle extends Component {
+
   state = {
     on: false
-  };
+  }
+
   toggle = () => {
     this.setState({
       on: !this.state.on

@@ -3,19 +3,43 @@ import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 import cuid from 'cuid'
 import moment from 'moment'
-import { createTask } from 'actions/taskActions'
+import { createTask, updateTask } from 'actions/taskActions'
 import TextInput from './TextInput'
 import DateInput from './DateInput'
 import { Button } from 'elements'
 
-const actions ={ createTask }
+const mapState = (state, ownProps) => {
+	const {taskId} = ownProps
+	if (taskId) {
+		const data = state.tasks.filter(task => task.id === taskId)
+		return {
+			initialValues: data
+		}
+	} else {
+		let today = new Date()
+		today = today.getDate()
+		return {      
+			importance: 'ordinary',
+			deadline: moment.utc(today)
+		}
+	}
+}
 
-let TaskForm = ({handleSubmit, createTask}) => {
+const actions = {
+	createTask,
+	updateTask
+}
+
+let TaskForm = ({handleSubmit, createTask, updateTask, taskId}) => {
 	const onSubmit = (values) => {
-		values.deadline = moment.utc(values.deadline, 'DD/MM/YYYY').format('DD/MM/YYYY')
-		const id = cuid()
-		values['id'] = id
-		createTask(values)
+		if (taskId) {
+			updateTask(values, taskId)
+		} else {
+			values.deadline = moment.utc(values.deadline, 'DD-MM-YYYY').format()
+			const id = cuid()
+			values['id'] = id
+			createTask(values)
+		}
 	}
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
@@ -55,5 +79,4 @@ TaskForm = reduxForm({
 	enableReinitialize: true,
 })(TaskForm)
 
-export default connect(null, actions)(TaskForm)
-
+export default connect(mapState, actions)(TaskForm)

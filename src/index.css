@@ -5,6 +5,7 @@
 *, *::before, *::after {
   box-sizing: inherit;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -35,4 +36,3 @@ body ul {
 .container li:nth-child(odd) {
   background-color:#FFF0F5;
 }
-

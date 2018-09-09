@@ -11,12 +11,29 @@ const mapState = state => ({
 })
 
 class TaskDashboard extends Component {
+  state = {
+    option: 'all'
+  }
+  handleChange = (event) => (
+    this.setState({
+      option: event.target.value
+    })
+  )
 	render() {
-		const {tasks} = this.props
+    let {tasks} = this.props
+    if (this.state.option !== 'all') {
+      tasks = tasks.filter(task => task.importance === this.state.option)
+    }
 		return (
 			<Fragment>
+        <div>
+          All<input type='radio' value='all' onChange={this.handleChange} checked={this.state.option === 'all'} />
+          Ordinary<input type='radio' value='ordinary' onChange={this.handleChange} checked={this.state.option === 'ordinary'} />
+          Important<input type='radio' value='important' onChange={this.handleChange} checked={this.state.option === 'high'} />
+          Very important<input type='radio' value='very high' onChange={this.handleChange} checked={this.state.option === 'very high'} />
+        </div>
 				<ul>
-					{tasks.map(task => <li key={task.id}>
+            {tasks.map(task => <li key={task.id}>
 						<Task
 							title={task.title}
 							description={task.description}
