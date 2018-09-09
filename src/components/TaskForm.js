@@ -17,12 +17,10 @@ const mapState = (state, ownProps) => {
 			initialValues: data[0]
 		}
 	} else {
-		let today = new Date()
-		today = today.getDate()
 		return {
 			initialValues: {    
 				importance: 'ordinary',
-				deadline: moment.utc(today, 'DD-MM-YYYY').format()
+				deadline: ''
 			}
 		}
 	}
@@ -47,7 +45,7 @@ class TaskForm extends Component {
 			if (taskId) {
 				updateTask(values, taskId)
 			} else {
-				values.deadline = moment.utc(values.deadline, 'DD-MM-YYYY').format()
+				if (values.deadline) {values.deadline = moment.utc(values.deadline, 'DD-MM-YYYY').format()}
 				const id = cuid()
 				values['id'] = id
 				values['completed'] = false

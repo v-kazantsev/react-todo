@@ -23,9 +23,11 @@ const Task = ({ title, description, importance, deadline, id, removeTask, toggle
 	const completed = tasks && tasks.filter(task => task.id === id)[0].completed
 
 	const checkDeadline = () => {
-		let today = new Date()
-		today = moment.utc(today.getDate(), 'DD-MM-YYYY').format()
-		if (today > deadline) return true
+		if (deadline) {
+			let today = new Date()
+			today = moment.utc(today.getDate(), 'DD-MM-YYYY').format()
+			if (today > deadline) return true
+		}
 	}	
 	return (
 		<Fragment>
@@ -39,7 +41,7 @@ const Task = ({ title, description, importance, deadline, id, removeTask, toggle
         Importance: {importance}
 			</div>
 			<div>
-        Due to: <span style={{color: checkDeadline() && 'red'}}>{moment(deadline).format('DD-MM-YYYY')}</span>
+        Due to: {deadline &&<span style={{color: checkDeadline() && 'red'}}>{moment(deadline).format('DD-MM-YYYY')}</span>}
 			</div>
 			<div>
 			</div>
